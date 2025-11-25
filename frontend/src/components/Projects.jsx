@@ -1,8 +1,10 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
+import { ArrowRight } from 'lucide-react';
 import ProjectCard from './ProjectCard';
 
-const Projects = ({ data }) => {
+const Projects = ({ data, showViewAll = false }) => {
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -21,7 +23,18 @@ const Projects = ({ data }) => {
       viewport={{ once: true }}
       transition={{ duration: 0.6 }}
     >
-      <h2 className="text-2xl sm:text-3xl font-bold mb-6">Projects</h2>
+      <div className="flex items-center justify-between mb-6">
+        <h2 className="text-2xl sm:text-3xl font-bold">Projects</h2>
+        {showViewAll && (
+          <Link
+            to="/projects"
+            className="flex items-center gap-1.5 text-[#3b82f6] hover:text-[#2563eb] transition-colors text-sm font-medium group"
+          >
+            View All
+            <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
+          </Link>
+        )}
+      </div>
       <motion.div
         className="grid grid-cols-1 sm:grid-cols-2 gap-4"
         variants={containerVariants}
