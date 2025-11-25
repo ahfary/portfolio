@@ -45,7 +45,7 @@ const Contact = () => {
       transition={{ duration: 0.6 }}
     >
       <h2 className="text-2xl sm:text-3xl font-bold mb-6">Contact</h2>
-      <div className="bg-[#171717] border border-[#262626] rounded-lg p-6">
+      <div className="bg-neutral-900/50 border border-neutral-800 rounded-lg p-6">
         <div className="flex items-center gap-2 text-[#a3a3a3] mb-6">
           <Mail size={18} />
           <a href="mailto:ahmad@example.com" className="hover:text-[#3b82f6] transition-colors">
@@ -65,7 +65,7 @@ const Contact = () => {
               required
               value={formData.name}
               onChange={handleChange}
-              className="bg-[#0a0a0a] border-[#262626] text-white focus:border-[#3b82f6] focus:ring-[#3b82f6]"
+              className="bg-neutral-950 border-neutral-800 text-white focus:border-[#3b82f6] focus:ring-[#3b82f6]"
               placeholder="Your name"
             />
           </div>
@@ -81,7 +81,7 @@ const Contact = () => {
               required
               value={formData.email}
               onChange={handleChange}
-              className="bg-[#0a0a0a] border-[#262626] text-white focus:border-[#3b82f6] focus:ring-[#3b82f6]"
+              className="bg-neutral-950 border-neutral-800 text-white focus:border-[#3b82f6] focus:ring-[#3b82f6]"
               placeholder="your.email@example.com"
             />
           </div>
@@ -96,7 +96,7 @@ const Contact = () => {
               required
               value={formData.message}
               onChange={handleChange}
-              className="bg-[#0a0a0a] border-[#262626] text-white focus:border-[#3b82f6] focus:ring-[#3b82f6] min-h-[120px]"
+              className="bg-neutral-950 border-neutral-800 text-white focus:border-[#3b82f6] focus:ring-[#3b82f6] min-h-[120px]"
               placeholder="Your message..."
             />
           </div>

@@ -17,11 +17,11 @@ const ProjectCard = ({ project }) => {
 
   return (
     <motion.div
-      className="bg-[#171717] border border-[#262626] rounded-lg overflow-hidden group hover:border-[#3b82f6] transition-all duration-300"
+      className="bg-neutral-900/50 border border-neutral-800 rounded-lg overflow-hidden group hover:border-[#3b82f6] transition-all duration-300"
       variants={cardVariants}
       whileHover={{ y: -4, transition: { duration: 0.2 } }}
     >
-      <div className="relative overflow-hidden bg-[#0a0a0a]">
+      <div className="relative overflow-hidden bg-neutral-950">
         <img
           src={project.image}
           alt={project.title}
@@ -39,7 +39,7 @@ const ProjectCard = ({ project }) => {
           {project.technologies.map((tech, idx) => (
             <span
               key={idx}
-              className="text-xs px-2 py-1 bg-[#262626] text-[#a3a3a3] rounded border border-[#333333]"
+              className="text-xs px-2 py-1 bg-neutral-800 text-[#a3a3a3] rounded border border-neutral-700"
             >
               {tech}
             </span>

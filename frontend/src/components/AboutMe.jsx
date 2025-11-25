@@ -11,7 +11,7 @@ const AboutMe = ({ data }) => {
       transition={{ duration: 0.6 }}
     >
       <h2 className="text-2xl sm:text-3xl font-bold mb-6">About Me</h2>
-      <div className="bg-[#171717] border border-[#262626] rounded-lg p-6">
+      <div className="bg-neutral-900/50 border border-neutral-800 rounded-lg p-6">
         <p className="text-[#a3a3a3] leading-relaxed">{data.description}</p>
       </div>
     </motion.section>
