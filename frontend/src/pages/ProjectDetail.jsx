@@ -4,6 +4,7 @@ import { motion } from 'framer-motion';
 import { ArrowLeft, ExternalLink, ArrowRight } from 'lucide-react';
 import { mockData } from '../data/mockData';
 import { Button } from '../components/ui/button';
+import SEO from '@/components/SEO';
 
 const ProjectDetail = () => {
   const { id } = useParams();

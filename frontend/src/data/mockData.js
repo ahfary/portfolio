@@ -214,8 +214,8 @@ export const mockData = {
       title: "JavaScript Dasar",
       issuer: "Skilvul",
       date: "11 Mei 2024",
-      image: "/assets/images/certificates/JavaScript.jpg",
-      pdfLink: "/assets/images/certificates/JavaScript.pdf"
+      image: "/assets/images/certificates/Javascript.jpg",
+      pdfLink: "/assets/images/certificates/Javascript.pdf"
     },
     {
       id: 6,

@@ -9,6 +9,7 @@ import Skills from "../components/Skills";
 import Contact from "../components/Contact";
 import { mockData } from "../data/mockData";
 import Certificates from "@/components/certificates";
+import SEO from "@/components/SEO";
 
 const Home = () => {
   const [data] = useState(mockData);
