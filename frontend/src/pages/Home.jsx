@@ -1,14 +1,14 @@
-import React, { useState } from 'react';
-import { motion } from 'framer-motion';
-import Header from '../components/Header';
-import AboutMe from '../components/AboutMe';
-import Projects from '../components/Projects';
-import Experience from '../components/Experience';
-import Education from '../components/Education';
-import Skills from '../components/Skills';
-import Contact from '../components/Contact';
-import { mockData } from '../data/mockData';
-import Certificates from '@/components/certificates';
+import React, { useState } from "react";
+import { motion } from "framer-motion";
+import Header from "../components/Header";
+import AboutMe from "../components/AboutMe";
+import Projects from "../components/Projects";
+import Experience from "../components/Experience";
+import Education from "../components/Education";
+import Skills from "../components/Skills";
+import Contact from "../components/Contact";
+import { mockData } from "../data/mockData";
+import Certificates from "@/components/certificates";
 
 const Home = () => {
   const [data] = useState(mockData);
@@ -30,7 +30,7 @@ const Home = () => {
       y: 0,
       transition: {
         duration: 0.6,
-        ease: 'easeOut',
+        ease: "easeOut",
       },
     },
   };
@@ -42,6 +42,10 @@ const Home = () => {
       initial="hidden"
       animate="visible"
     >
+      <SEO
+        title="Home"
+        description="Selamat datang di portofolio Ahmad Faqih Abqory. Jelajahi proyek web development, sertifikasi, dan pengalaman kerja saya."
+      />
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <motion.div variants={sectionVariants}>
           <Header data={data.header} />
