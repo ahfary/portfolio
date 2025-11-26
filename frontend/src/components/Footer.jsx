@@ -47,7 +47,7 @@ const Footer = () => {
           </motion.a>
         </div>
         <p className="text-[#6b7280] text-sm">
-          Copyright {currentYear} Ahmad Faqih Abqory
+          &copy; Copyright {currentYear} - Ahmad Faqih Abqory - All Rights Reserved.
         </p>
       </div>
     </motion.footer>

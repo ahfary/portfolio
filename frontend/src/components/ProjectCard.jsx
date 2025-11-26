@@ -17,7 +17,8 @@ const ProjectCard = ({ project }) => {
 
   return (
     <motion.div
-      className="bg-neutral-900/50 border border-neutral-800 rounded-lg overflow-hidden group hover:border-[#3b82f6] transition-all duration-300"
+      /* Tambahkan 'h-full' dan 'cursor-pointer' */
+      className="bg-neutral-900/50 border border-neutral-800 rounded-lg overflow-hidden group hover:border-[#3b82f6] transition-all duration-300 h-full cursor-pointer"
       variants={cardVariants}
       whileHover={{ y: -4, transition: { duration: 0.2 } }}
     >

@@ -6,6 +6,9 @@ import ProjectsPage from './pages/ProjectsPage';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import { Toaster } from 'sonner';
+import ProjectDetail from './pages/ProjectDetail';
+import CertificatesPage from './pages/certificatesPage';
+import ContactPage from './pages/contactPage';
 
 function App() {
   return (
@@ -15,6 +18,9 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/projects" element={<ProjectsPage />} />
+          <Route path="/projects/:id" element={<ProjectDetail />} />
+          <Route path="/certificates" element={<CertificatesPage />} />
+          <Route path="/contact" element={<ContactPage />} />
         </Routes>
         <Footer />
         <Toaster 

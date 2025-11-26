@@ -8,6 +8,7 @@ import Education from '../components/Education';
 import Skills from '../components/Skills';
 import Contact from '../components/Contact';
 import { mockData } from '../data/mockData';
+import Certificates from '@/components/certificates';
 
 const Home = () => {
   const [data] = useState(mockData);
@@ -41,7 +42,7 @@ const Home = () => {
       initial="hidden"
       animate="visible"
     >
-      <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <motion.div variants={sectionVariants}>
           <Header data={data.header} />
         </motion.div>
@@ -63,11 +64,11 @@ const Home = () => {
         </motion.div>
 
         <motion.div variants={sectionVariants}>
-          <Skills data={data.skills} />
+          <Certificates data={data.certificates} />
         </motion.div>
 
         <motion.div variants={sectionVariants}>
-          <Contact />
+          <Skills data={data.skills} />
         </motion.div>
       </div>
     </motion.div>

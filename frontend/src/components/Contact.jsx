@@ -48,8 +48,8 @@ const Contact = () => {
       <div className="bg-neutral-900/50 border border-neutral-800 rounded-lg p-6">
         <div className="flex items-center gap-2 text-[#a3a3a3] mb-6">
           <Mail size={18} />
-          <a href="mailto:ahmad@example.com" className="hover:text-[#3b82f6] transition-colors">
-            ahmad@example.com
+          <a href="mailto:abqory0814@egmail.com" className="hover:text-[#3b82f6] transition-colors">
+            abqory0814@egmail.com
           </a>
         </div>
 

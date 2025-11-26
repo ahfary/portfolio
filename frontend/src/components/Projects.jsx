@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link } from 'react-router-dom'; // Import Link
 import { motion } from 'framer-motion';
 import { ArrowRight } from 'lucide-react';
 import ProjectCard from './ProjectCard';
@@ -35,6 +35,7 @@ const Projects = ({ data, showViewAll = false }) => {
           </Link>
         )}
       </div>
+      
       <motion.div
         className="grid grid-cols-1 sm:grid-cols-2 gap-4"
         variants={containerVariants}
@@ -43,7 +44,10 @@ const Projects = ({ data, showViewAll = false }) => {
         viewport={{ once: true }}
       >
         {data.map((project, index) => (
-          <ProjectCard key={index} project={project} />
+          /* WRAPPER LINK DITAMBAHKAN DI SINI */
+          <Link to={`/projects/${project.id}`} key={index} className="block h-full">
+            <ProjectCard project={project} />
+          </Link>
         ))}
       </motion.div>
     </motion.section>

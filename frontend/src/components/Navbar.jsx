@@ -8,6 +8,8 @@ const Navbar = () => {
   const navLinks = [
     { name: 'Home', path: '/' },
     { name: 'Projects', path: '/projects' },
+    { name: 'Certificates', path: '/certificates' },
+    { name: 'Contact', path: '/contact' },
   ];
 
   return (
@@ -17,10 +19,10 @@ const Navbar = () => {
       animate={{ y: 0 }}
       transition={{ duration: 0.5 }}
     >
-      <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           <Link to="/" className="text-xl font-bold hover:text-[#3b82f6] transition-colors">
-            Ahmad Faqih
+            Portfolio
           </Link>
           
           <div className="flex items-center gap-6">
