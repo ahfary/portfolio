@@ -1,28 +1,25 @@
 import React, { useEffect } from 'react';
 import { useParams, Link, useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { ArrowLeft, ExternalLink, ArrowRight } from 'lucide-react';
+import { ArrowLeft, ExternalLink, ArrowRight, Globe, Lock } from 'lucide-react';
 import { mockData } from '../data/mockData';
 import { Button } from '../components/ui/button';
-import SEO from '@/components/SEO';
+import SEO from '../components/SEO';
 
 const ProjectDetail = () => {
   const { id } = useParams();
   const navigate = useNavigate();
 
-  // 1. Ambil semua project
   const allProjects = [...(mockData.homeProjects || []), ...(mockData.allProjects || [])];
   
-  // 2. Cari project yang sedang aktif
+  // Cari project yang sedang aktif
+  // Gunakan .find() dengan fallback objek kosong agar tidak error saat loading
   const project = allProjects.find((p) => p.id === id);
 
-  // 3. Logic "More Projects": Ambil project lain selain yang sedang dibuka
-  //    (Di sini kita ambil 3 project pertama yang bukan project ini)
   const otherProjects = allProjects
-    .filter((p) => p.id !== id) // Buang project yang sedang aktif
-    .slice(0, 3); // Ambil 3 sisanya
+    .filter((p) => p.id !== id)
+    .slice(0, 3);
 
-  // Scroll ke atas setiap kali ID berubah (saat klik project lain di bawah)
   useEffect(() => {
     window.scrollTo(0, 0);
   }, [id]);
@@ -40,14 +37,15 @@ const ProjectDetail = () => {
 
   return (
     <div className="min-h-screen bg-[#0a0a0a] text-white pt-24 pb-16">
+      {/* Tambahkan SEO untuk halaman detail */}
       <SEO 
         title={project.title} 
         description={project.description.substring(0, 150) + "..."} 
         type="article"
       />
-      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+
+      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         
-        {/* Tombol Back */}
         <Link 
           to="/projects" 
           className="inline-flex items-center text-[#a3a3a3] hover:text-[#3b82f6] transition-colors mb-8"
@@ -56,7 +54,6 @@ const ProjectDetail = () => {
           Back to Projects
         </Link>
 
-        {/* --- MAIN CONTENT --- */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -64,7 +61,6 @@ const ProjectDetail = () => {
         >
           <h1 className="text-4xl sm:text-5xl font-bold mb-6">{project.title}</h1>
           
-          {/* Meta Info */}
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 border-y border-neutral-800 py-6 mb-8">
             <div>
               <p className="text-sm text-[#a3a3a3] mb-1">Category</p>
@@ -80,11 +76,10 @@ const ProjectDetail = () => {
             </div>
             <div>
               <p className="text-sm text-[#a3a3a3] mb-1">Tech Stack</p>
-              <p className="font-medium truncate">{project.technologies.slice(0, 2).join(', ')}</p>
+              <p className="font-medium truncate">{project.technologies?.slice(0, 2).join(', ')}</p>
             </div>
           </div>
 
-          {/* Hero Image (Gambar Utama) */}
           <div className="rounded-xl overflow-hidden mb-10 border border-neutral-800">
             <img 
               src={project.image} 
@@ -94,7 +89,6 @@ const ProjectDetail = () => {
           </div>
 
           <div className="grid md:grid-cols-3 gap-10">
-            {/* Kolom Kiri: Deskripsi & Gallery */}
             <div className="md:col-span-2 space-y-8">
               <div>
                 <h3 className="text-2xl font-bold mb-4">Overview</h3>
@@ -117,7 +111,6 @@ const ProjectDetail = () => {
                 </div>
               )}
 
-              {/* --- NEW SECTION: PROJECT GALLERY --- */}
               {project.gallery && project.gallery.length > 0 && (
                 <div className="pt-8">
                   <h3 className="text-2xl font-bold mb-6">Project Gallery</h3>
@@ -136,27 +129,40 @@ const ProjectDetail = () => {
               )}
             </div>
 
-            {/* Kolom Kanan: Sidebar Action */}
+            {/* Sidebar Action */}
             <div className="space-y-6">
                <div className="bg-neutral-900/30 border border-neutral-800 rounded-lg p-6 sticky top-24">
                  <h3 className="font-bold mb-4">Technologies</h3>
                  <div className="flex flex-wrap gap-2 mb-6">
-                   {project.technologies.map((tech, i) => (
+                   {project.technologies?.map((tech, i) => (
                      <span key={i} className="px-3 py-1 bg-neutral-800 rounded-full text-sm text-[#a3a3a3]">
                        {tech}
                      </span>
                    ))}
                  </div>
                  
-                 <Button className="w-full bg-[#3b82f6] hover:bg-[#2563eb] h-12 text-base text-white">
-                   Visit Live Site <ExternalLink size={18} className="ml-2" />
-                 </Button>
+                 {/* LOGIC TOMBOL VISIT SITE */}
+                 {project.siteUrl ? (
+                   <Button 
+                     className="w-full bg-[#3b82f6] hover:bg-[#2563eb] h-12 text-base text-white"
+                     onClick={() => window.open(project.siteUrl, '_blank')}
+                   >
+                     Visit Live Site <Globe size={18} className="ml-2" />
+                   </Button>
+                 ) : (
+                   <Button 
+                     className="w-full bg-neutral-800 text-neutral-500 h-12 text-base cursor-not-allowed"
+                     disabled
+                   >
+                     Private / Offline <Lock size={18} className="ml-2" />
+                   </Button>
+                 )}
+
                </div>
             </div>
           </div>
         </motion.div>
 
-        {/* --- NEW SECTION: OTHER PROJECTS (FAST MENU) --- */}
         <div className="mt-24 border-t border-neutral-800 pt-16">
           <div className="flex items-center justify-between mb-8">
             <h2 className="text-2xl font-bold">Other Projects</h2>
@@ -178,7 +184,7 @@ const ProjectDetail = () => {
                   </div>
                   <div className="p-4">
                     <h4 className="font-bold mb-1 group-hover:text-[#3b82f6] transition-colors">{p.title}</h4>
-                    <p className="text-xs text-[#a3a3a3] truncate">{p.technologies.join(', ')}</p>
+                    <p className="text-xs text-[#a3a3a3] truncate">{p.technologies?.join(', ')}</p>
                   </div>
                 </div>
               </Link>

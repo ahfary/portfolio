@@ -1,9 +1,11 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
+import { Menu, X } from 'lucide-react';
 
 const Navbar = () => {
   const location = useLocation();
+  const [isOpen, setIsOpen] = useState(false);
 
   const navLinks = [
     { name: 'Home', path: '/' },
@@ -11,6 +13,11 @@ const Navbar = () => {
     { name: 'Certificates', path: '/certificates' },
     { name: 'Contact', path: '/contact' },
   ];
+
+  // Tutup menu otomatis saat pindah halaman
+  useEffect(() => {
+    setIsOpen(false);
+  }, [location.pathname]);
 
   return (
     <motion.nav
@@ -21,11 +28,14 @@ const Navbar = () => {
     >
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
-          <Link to="/" className="text-xl font-bold hover:text-[#3b82f6] transition-colors">
-            Portfolio
+          
+          {/* Logo */}
+          <Link to="/" className="text-xl font-bold hover:text-[#3b82f6] transition-colors text-white">
+            Ahmad Faqih
           </Link>
           
-          <div className="flex items-center gap-6">
+          {/* Desktop Menu (Hidden on Mobile) */}
+          <div className="hidden md:flex items-center gap-6">
             {navLinks.map((link) => (
               <Link
                 key={link.path}
@@ -47,8 +57,47 @@ const Navbar = () => {
               </Link>
             ))}
           </div>
+
+          {/* Mobile Menu Button (Visible on Mobile) */}
+          <div className="md:hidden flex items-center">
+            <button
+              onClick={() => setIsOpen(!isOpen)}
+              className="text-[#a3a3a3] hover:text-white p-2 transition-colors"
+              aria-label="Toggle menu"
+            >
+              {isOpen ? <X size={24} /> : <Menu size={24} />}
+            </button>
+          </div>
         </div>
       </div>
+
+      {/* Mobile Dropdown Menu */}
+      <AnimatePresence>
+        {isOpen && (
+          <motion.div
+            initial={{ opacity: 0, height: 0 }}
+            animate={{ opacity: 1, height: 'auto' }}
+            exit={{ opacity: 0, height: 0 }}
+            className="md:hidden bg-[#0a0a0a] border-b border-neutral-800 overflow-hidden"
+          >
+            <div className="px-4 pt-2 pb-6 space-y-2">
+              {navLinks.map((link) => (
+                <Link
+                  key={link.path}
+                  to={link.path}
+                  className={`block px-3 py-3 rounded-md text-base font-medium transition-colors ${
+                    location.pathname === link.path
+                      ? 'bg-neutral-900 text-[#3b82f6]'
+                      : 'text-[#a3a3a3] hover:bg-neutral-900 hover:text-white'
+                  }`}
+                >
+                  {link.name}
+                </Link>
+              ))}
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </motion.nav>
   );
 };

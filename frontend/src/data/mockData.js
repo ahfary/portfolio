@@ -21,6 +21,7 @@ export const mockData = {
       description:
         "SakuSantri adalah sistem manajemen keuangan digital yang dirancang khusus untuk lingkungan pondok pesantren. Aplikasi ini mengubah sistem jajan dan pengelolaan uang saku santri dari metode konvensional menjadi sistem non-tunai (cashless) berbasis saldo, yang dapat dikelola oleh admin dan dipantau oleh orang tua/wali santri (walsan).",
       technologies: ["Next.js", "TypeScript", "TailwindCSS", "Nest.js"],
+      siteUrl: "https://sakusantri.ahmadfaqihabqory.my.id/",
       image: "/assets/images/projects/sakusantri/saku.png",
     },
     {
@@ -30,6 +31,7 @@ export const mockData = {
         "Eco Heroes adalah game edukatif berbasis website yang dirancang untuk meningkatkan kesadaran tentang pentingnya menjaga kebersihan lingkungan dengan cara yang interaktif dan menyenangkan. Pemain berperan sebagai pahlawan yang bertugas membersihkan dunia dari sampah sekaligus melawan makhluk jorok (goblin, ogre, dan orc) yang terkontaminasi virus akibat lingkungan yang kotor.",
       technologies: ["HTML", "CSS", "JavaScript"],
       image: "/assets/images/projects/ecoheroes/eco.avif",
+      siteUrl: "https://ecoheroes.ahmadfaqihabqory.my.id/",
     },
     {
       id: "ppdb-system",
@@ -56,6 +58,7 @@ export const mockData = {
         "Eco Heroes adalah game edukatif berbasis website yang dirancang untuk meningkatkan kesadaran tentang pentingnya menjaga kebersihan lingkungan dengan cara yang interaktif dan menyenangkan. Pemain berperan sebagai pahlawan yang bertugas membersihkan dunia dari sampah sekaligus melawan makhluk jorok (goblin, ogre, dan orc) yang terkontaminasi virus akibat lingkungan yang kotor.",
       technologies: ["HTML", "CSS", "JavaScript"],
       image: "/assets/images/projects/ecoheroes/eco.avif",
+      siteUrl: "https://ecoheroes.ahmadfaqihabqory.my.id/",
       gallery: [
         "/assets/images/projects/ecoheroes/eco1.avif",
         "/assets/images/projects/ecoheroes/eco2.avif",
@@ -69,6 +72,7 @@ export const mockData = {
         "Website CV adalah proyek berbasis web yang menampilkan informasi pribadi, pendidikan, keterampilan, sertifikasi, dan pengalaman dalam bentuk portofolio digital interaktif. Proyek ini bertujuan untuk memberikan alternatif modern dari CV tradisional dengan desain yang lebih menarik dan mudah diakses.",
       technologies: ["HTML", "CSS", "JavaScript"],
       image: "/assets/images/projects/cv/cv.avif",
+      siteUrl: "https://cv.ahmadfaqihabqory.my.id/",
       gallery: [
         "/assets/images/projects/cv/cv1.webp",
         "/assets/images/projects/cv/cv2.webp",
@@ -81,6 +85,7 @@ export const mockData = {
         "SakuSantri adalah sistem manajemen keuangan digital yang dirancang khusus untuk lingkungan pondok pesantren. Aplikasi ini mengubah sistem jajan dan pengelolaan uang saku santri dari metode konvensional menjadi sistem non-tunai (cashless) berbasis saldo, yang dapat dikelola oleh admin dan dipantau oleh orang tua/wali santri (walsan).",
       technologies: ["Next.js", "TypeScript", "TailwindCSS", "Nest.js"],
       image: "/assets/images/projects/sakusantri/saku.png",
+      siteUrl: "https://sakusantri.ahmadfaqihabqory.my.id/",
       gallery: [
         "/assets/images/projects/sakusantri/saku1.png",
         "/assets/images/projects/sakusantri/saku2.png",
