@@ -30,8 +30,9 @@ const Navbar = () => {
         <div className="flex items-center justify-between h-16">
           
           {/* Logo */}
-          <Link to="/" className="text-xl font-bold hover:text-[#3b82f6] transition-colors text-white">
-            Ahmad Faqih
+          <Link to="/" className="text-xl font-bold hover:text-[#3b82f6] transition-colors text-white flex items-center gap-2 justify-center">
+            <img src="/assets/icons/Logo.jpg" alt="Logo" className='h-10'/>
+            Qoy
           </Link>
           
           {/* Desktop Menu (Hidden on Mobile) */}

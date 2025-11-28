@@ -54,11 +54,16 @@ const Skills = ({ data }) => {
       >
         <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 gap-6">
           {data.map((skill, index) => (
-            <motion.div
+            // UBAH DARI motion.div KE motion.a
+            <motion.a
               key={index}
-              className="flex flex-col items-center justify-center gap-3 p-4 bg-neutral-800/50 rounded-lg border border-neutral-700 hover:border-[#3b82f6] hover:bg-neutral-800 transition-all duration-300 group"
+              href={skill.url} // Link ke dokumentasi
+              target="_blank"  // Buka di tab baru
+              rel="noopener noreferrer" // Keamanan
+              className="flex flex-col items-center justify-center gap-3 p-4 bg-neutral-800/50 rounded-lg border border-neutral-700 hover:border-[#3b82f6] hover:bg-neutral-800 transition-all duration-300 group cursor-pointer"
               variants={itemVariants}
               whileHover={{ scale: 1.05, y: -4 }}
+              whileTap={{ scale: 0.95 }}
             >
               <div className="text-[#a3a3a3] group-hover:text-[#3b82f6] transition-colors duration-300">
                 {getIcon(skill.icon)}
@@ -66,7 +71,7 @@ const Skills = ({ data }) => {
               <span className="text-xs font-medium text-[#a3a3a3] group-hover:text-white transition-colors text-center">
                 {skill.name}
               </span>
-            </motion.div>
+            </motion.a>
           ))}
         </div>
       </motion.div>
