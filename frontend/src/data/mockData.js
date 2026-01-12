@@ -119,6 +119,28 @@ export const mockData = {
   ],
   experience: [
     {
+      role: "Business Development & Media Intern",
+      organization: "NRA Group Travel",
+      location: "Jakarta Selatan, Indonesia",
+      date: "2025 – Sekarang",
+      points: [
+        "Mendukung strategi pengembangan bisnis dan kemitraan untuk paket perjalanan Umrah & Haji.",
+        "Mengelola konten kreatif dan media sosial perusahaan untuk meningkatkan brand awareness dan engagement.",
+        "Melakukan riset pasar dan analisis kompetitor guna mengoptimalkan layanan dan produk travel.",
+      ],
+    },
+    {
+      role: "Sekertaris OSIS Masa Bakti 2024 - 2025",
+      organization: "SMK MADINATULQURAN",
+      location: "Jonggol, Indonesia",
+      date: "2024 – 2025",
+      points: [
+        "Mengelola dokumentasi administrasi OSIS, termasuk pencatatan notulen rapat dan arsip kegiatan.",
+        "Menyusun jadwal kegiatan serta memastikan koordinasi antara anggota OSIS dan pihak sekolah.",
+        "Membuat serta mendistribusikan materi publikasi acara OSIS untuk meningkatkan keterlibatan siswa.",
+      ],
+    },
+    {
       role: "Sekertaris OSIS Masa Bakti 2022 - 2023",
       organization: "SMPIT AL - HIDAYAH Boarding School",
       location: "Bogor, Indonesia",
@@ -149,17 +171,6 @@ export const mockData = {
         "Membuat berbagai desain kreatif untuk keperluan acara dan kegiatan sekolah.",
         "Mengembangkan keterampilan desain grafis dengan memanfaatkan perangkat lunak desain.",
         "Berkolaborasi dengan tim OSIS dan guru untuk menghasilkan materi visual yang menarik.",
-      ],
-    },
-    {
-      role: "Sekertaris OSIS Masa Bakti 2024 - 2025",
-      organization: "SMK MADINATULQURAN",
-      location: "Jonggol, Indonesia",
-      date: "2024 – 2025",
-      points: [
-        "Mengelola dokumentasi administrasi OSIS, termasuk pencatatan notulen rapat dan arsip kegiatan.",
-        "Menyusun jadwal kegiatan serta memastikan koordinasi antara anggota OSIS dan pihak sekolah.",
-        "Membuat serta mendistribusikan materi publikasi acara OSIS untuk meningkatkan keterlibatan siswa.",
       ],
     },
   ],

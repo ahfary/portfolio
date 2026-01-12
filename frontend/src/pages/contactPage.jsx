@@ -152,7 +152,7 @@ const Contact = () => {
                   placeholder="john@example.com"
                   required
                   value={formData.email}
-                  onChange={handleChange}
+                  onChange={handleChange}React
                   className="bg-neutral-950 border-neutral-800 focus:border-[#3b82f6] h-12"
                 />
               </div>
