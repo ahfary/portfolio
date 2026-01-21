@@ -52,6 +52,19 @@ export const mockData = {
   ],
   allProjects: [
     {
+      id: "learning-path",
+      title: "Abqory Learning Path",
+      description:
+        "Abqory Learning Path adalah website dokumentasi pembelajaran yang komprehensif untuk pengembang web pemula. Dibangun menggunakan Docusaurus, platform ini menyediakan jalur belajar terstruktur mencakup HTML, CSS, dan JavaScript, lengkap dengan materi yang mudah dipahami dan dokumentasi yang rapi.",
+      technologies: ["Docusaurus", "React", "Markdown"],
+      image: "/assets/images/projects/learningpath/learn2.png", // Pastikan Anda membuat folder dan upload gambar ini
+      siteUrl: "https://learningpath.ahmadfaqihabqory.my.id/", // Sesuaikan dengan subdomain yang Anda rencanakan
+      gallery: [
+        "/assets/images/projects/learningpath/learn1.png",
+        "/assets/images/projects/learningpath/learn2.png",
+      ],
+    },
+    {
       id: "eco-heroes",
       title: "Echo Heroes",
       description:
@@ -122,7 +135,7 @@ export const mockData = {
       role: "Business Development & Media Intern",
       organization: "NRA Group Travel",
       location: "Jakarta Selatan, Indonesia",
-      date: "2025 – Sekarang",
+      date: "2026 – Sekarang",
       points: [
         "Mendukung strategi pengembangan bisnis dan kemitraan untuk paket perjalanan Umrah & Haji.",
         "Mengelola konten kreatif dan media sosial perusahaan untuk meningkatkan brand awareness dan engagement.",
